@@ -1,0 +1,32 @@
+###
+PUT http://localhost:8080/pets
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+  "animal_type": "Cat",
+  "name": "Person A",
+  "country": "USA"
+}
+
+###
+PUT http://localhost:8080/pets
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+  "animal_type": "Cat",
+  "name": "Person B",
+  "country": "USA"
+}
+
+###
+PUT http://localhost:8080/pets
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+  "animal_type": "Cat",
+  "name": "Person C",
+  "country": "USA"
+}

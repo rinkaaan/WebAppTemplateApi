@@ -1,0 +1,7 @@
+--extra-index-url https://test.pypi.org/simple/
+connexion[flask,swagger-ui,uvicorn]
+psycopg[binary]
+SQLAlchemy
+python-jose[cryptography]
+requests-oauthlib
+# nguylinc-python-utils==0.0.1
