@@ -10,7 +10,7 @@ paths:
     post:
       tags: [ Auth ]
       description: Verify auth code and return JWT token
-      x-openapi-router-controller: resources.auth.api
+      x-openapi-router-controller: api.resources.auth.api
       operationId: verify
       requestBody:
         content:
@@ -29,7 +29,7 @@ paths:
   /user:
     get:
       tags: [ User ]
-      x-openapi-router-controller: resources.user.api
+      x-openapi-router-controller: api.resources.user.api
       operationId: get
       security:
         - jwt: [ 'secret' ]
@@ -45,7 +45,7 @@ paths:
   /pets:
     get:
       tags: [ Pet ]
-      x-openapi-router-controller: resources.pet.api
+      x-openapi-router-controller: api.resources.pet.api
       operationId: get_items
       security:
         - jwt: [ 'secret' ]
@@ -78,7 +78,7 @@ paths:
                   $ref: '#/components/schemas/Pet'
     put:
       tags: [ Pet ]
-      x-openapi-router-controller: resources.pet.api
+      x-openapi-router-controller: api.resources.pet.api
       operationId: put
       security:
         - jwt: [ 'secret' ]
@@ -100,7 +100,7 @@ paths:
   '/pets/{pet_id}':
     get:
       tags: [ Pet ]
-      x-openapi-router-controller: resources.pet.api
+      x-openapi-router-controller: api.resources.pet.api
       operationId: get
       security:
         - jwt: [ 'secret' ]
@@ -118,7 +118,7 @@ paths:
           description: Pet does not exist
     patch:
       tags: [ Pet ]
-      x-openapi-router-controller: resources.pet.api
+      x-openapi-router-controller: api.resources.pet.api
       operationId: patch
       security:
         - jwt: [ 'secret' ]
@@ -135,7 +135,7 @@ paths:
               $ref: '#/components/schemas/PetProps'
     delete:
       tags: [ Pet ]
-      x-openapi-router-controller: resources.pet.api
+      x-openapi-router-controller: api.resources.pet.api
       operationId: delete
       security:
         - jwt: [ 'secret' ]
@@ -153,7 +153,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      x-bearerInfoFunc: resources.auth.utils.decode_token
+      x-bearerInfoFunc: api.resources.auth.utils.decode_token
   parameters:
     pet_id:
       name: pet_id
