@@ -1,5 +1,5 @@
 from api.app import session
-from api.resources.user.model import User
+from models.resources.user import User
 
 
 def get(user):

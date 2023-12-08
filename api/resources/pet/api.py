@@ -7,7 +7,7 @@ from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError
 
 from api.app import session
-from api.resources.pet.model import Pet
+from models.resources.pet import Pet
 
 
 def get_items(limit, user, animal_type=None, after_datetime=datetime.min):

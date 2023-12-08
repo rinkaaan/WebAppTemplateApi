@@ -6,7 +6,7 @@ from jose import jwt
 
 from api.app import session
 from api.resources.auth.utils import oauth
-from api.resources.user.model import User
+from models.resources.user import User
 from nguylinc_python_utils.sqlalchemy import deserialize_body
 
 
@@ -25,11 +25,11 @@ def verify(body):
     user = session.query(User).filter(User.email == id_token["email"]).one_or_none()
 
     if not user:
-        user = deserialize_body(User, id_token, fields=User.google_fields)
+        user = deserialize_body(User, id_token, User.google_fields)
         user.created_at = datetime.now()
         session.add(user)
     else:
-        new_user = deserialize_body(User, id_token, fields=User.google_fields)
+        new_user = deserialize_body(User, id_token, User.google_fields)
         session.query(User).filter(User.id == user.id).update(new_user.dump())
 
     session.commit()
